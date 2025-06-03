@@ -81,7 +81,7 @@ $result = $conn->query($sql);
   $r = $result->fetch_assoc();
 $non_booked=$r['non_booked'];?>
           
-          ['Booked Room',     <?php echo $booked ?>],
+          ['Habitaciones Reservadas',     <?php echo $booked ?>],
           ['Available Room',      <?php echo $non_booked ?>]
           
         ]);
@@ -126,43 +126,43 @@ $non_booked=$r['non_booked'];?>
                     
                         <a href="#" class="nav__link tablink" onclick="openCity('booked_room', this, 'blue')">
                         <i class='bx bx-grid-alt nav__icon' ></i>
-                            <span class="nav__name">Booked room</span>
+                            <span class="nav__name">Habitaciones Reservadas</span>
                         </a>
 
                         <a href="#" class="nav__link tablink" onclick="openCity('all_room_info', this, 'blue')">
                             <i class='far fa-address-book nav__icon' ></i>
-                            <span class="nav__name">All Room Info</span>
+                            <span class="nav__name">Informacion Habitacion</span>
                         </a>
 
                         <a href="#" class="nav__link tablink" onclick="openCity('add_new_room', this, 'blue')">
                             <!-- <i class='bx bx-user nav__icon' ></i> -->
                             <i class="iconify" data-icon="fluent:conference-room-28-regular" data-inline="false"></i>
-                            <span class="nav__name">Add New Room</span>
+                            <span class="nav__name">Agrega Habitacion</span>
                         </a>
 
                         <a href="#" class="nav__link tablink" onclick="openCity('update_room_info', this, 'blue')">
                         <i class="iconify" data-icon="dashicons:update" data-inline="false"></i>
-                            <span class="nav__name">Update Room Info</span>
+                            <span class="nav__name">Actualizar Informacion</span>
                         </a>
                         
                          <a href="#" class="nav__link tablink" onclick="openCity('customer_info', this, 'blue')">
                             <i class='far fa-user nav__icon' ></i>
-                            <span class="nav__name">Customer Info</span>
+                            <span class="nav__name">Informacion Cliente</span>
                         </a>
 
-                        <a href="#" class="nav__link tablink" onclick="openCity('employee', this, 'blue')">
+                        <a href="#" class="nav__link tablink" onclick="openCity('Empleado', this, 'blue')">
                             <i class='far fa-id-card nav__icon' ></i>
-                            <span class="nav__name">Employee</span>
+                            <span class="nav__name">Empleado</span>
                         </a>
 
-                        <a href="#" class="nav__link tablink" onclick="openCity('employee_attendence', this, 'blue')">
+                        <a href="#" class="nav__link tablink" onclick="openCity('Empleado_attendence', this, 'blue')">
                             <i class='fas fa-fingerprint nav__icon' ></i>
-                            <span class="nav__name">Employee Attendence</span>
+                            <span class="nav__name">Asistencia Empleado</span>
                         </a>
 
                         <a href="#" class="nav__link tablink" onclick="openCity('expenses', this, 'blue')">
                             <i class='fas fa-hand-holding-usd nav__icon' ></i>
-                            <span class="nav__name">Add Expenses</span>
+                            <span class="nav__name">Agrega Gastos</span>
                         </a>
 
                        
@@ -180,14 +180,14 @@ $non_booked=$r['non_booked'];?>
 
                 <a href="#" class="nav__link">
                     <i class='bx bx-log-out nav__icon' ></i>
-                    <span class="nav__name">Log Out</span>
+                    <span class="nav__name">Cerrar Sesion</span>
                 </a>
             </nav>
         </div>
 
         
 <div id="admin" class="tabcontent">
-    <h1>Welcome To Pagina Administrador</h1>
+    <h1>Bienvenido Pagina Administrador</h1>
     <div class="row">
     <div class="col-md-6">
     <div id="piechart" style="width: 800px; height: 500px;"></div>
@@ -200,7 +200,7 @@ $non_booked=$r['non_booked'];?>
     
   
   
-  <!-- Booked Room -->
+  <!-- Habitaciones Reservadas -->
   <div id="booked_room" class="tabcontent">
   <?php
 $servername = "localhost";
@@ -220,11 +220,11 @@ $result = $conn->query($sql);
 ?>
   
 <br>
-<h2>Payment Done</h2>  
+<h2>Pago Realizado</h2>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Room No</th>
-                <th>Check-in-date</th>
+                <th>Habitacion numero</th>
+                <th>Fecha de Check In</th>
                 <th>Check-out-date</th>
                 <th>Customer ID</th>
                 
@@ -267,8 +267,8 @@ $result = $conn->query($sql);
 <h2>Payment Not Done</h2>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Room No</th>
-                <th>Check-in-date</th>
+                <th>Habitacion numero</th>
+                <th>Fecha de Check In</th>
                 <th>Check-out-date</th>
                 <th>Customer ID</th>
                 
@@ -292,11 +292,11 @@ $result = $conn->query($sql);
 
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <div class="form-group">
-    <label >Enter Room No and Check-out-date to cancel Booked Room.</label>
+    <label >Enter Habitacion numero and Check-out-date to cancel Habitaciones Reservadas.</label>
    </div>  
   <div class="form-group">
-    <label for="room_no">Room No:</label>
-    <input type="text" name="room_no"  placeholder="Room No" >
+    <label for="room_no">Habitacion numero:</label>
+    <input type="text" name="room_no"  placeholder="Habitacion numero" >
    </div>  
    <div class="form-group">
     <label for="check_out">Check-out-date:</label>
@@ -343,7 +343,7 @@ $conn->close();
     </div>
 
     
-  <!-- Add new Room -->
+  <!-- Agrega Habitacion -->
   <div id="add_new_room" class="tabcontent">
     <h2>Create New Room</h2>
     
@@ -357,7 +357,7 @@ $conn->close();
   </select>
 </div>
     <div class="form-group">
-    <label for="room_no">Room No</label>
+    <label for="room_no">Habitacion numero</label>
     <input type="text" name="room_no" id="">            
     </div>
     <div class="form-group">
@@ -417,7 +417,7 @@ $conn->close();
   <h2>Delete Room</h2>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="form-group">
-    <label for="room_no">Room No</label>
+    <label for="room_no">Habitacion numero</label>
     <input type="text" name="room_no" id="">            
     </div>
 
@@ -460,7 +460,7 @@ $conn->close();
   </div>
 
 
-  <!-- ALL Room Info -->
+  <!-- Informacion Habitacion -->
   <div id="all_room_info" class="tabcontent">
   <?php
 $servername = "localhost";
@@ -482,7 +482,7 @@ $result = $conn->query($sql);
 <br>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Room No</th>
+                <th>Habitacion numero</th>
                 <th>Floor No</th>
                 <th>Room name</th>
                 <th>No of Single Bed</th>
@@ -514,12 +514,12 @@ $result = $conn->query($sql);
         </table>
   </div>
 
-<!-- Update Room Info -->
+<!-- Actualizar Informacion -->
 <div id="update_room_info" class="tabcontent">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-  <h2>Enter details to update Room Info</h2>
+  <h2>Enter details to Actualizar Informacion</h2>
     <div class="form-group">
-    <label for="room_no">Room No</label>
+    <label for="room_no">Habitacion numero</label>
     <input type="text" name="room_no" id="">            
     </div>
     <div class="form-group">
@@ -577,7 +577,7 @@ $conn->close();?>
   </div>
 
 
-  <!-- Customer Info -->
+  <!-- Informacion Cliente -->
 
   <div id="customer_info" class="tabcontent">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">  
@@ -711,11 +711,11 @@ $result = $conn->query($sql);
         </table>
   </div>
 
-<!-- Employee -->
+<!-- Empleado -->
 
-<div id="employee" class="tabcontent">
+<div id="Empleado" class="tabcontent">
 <div class="container">
-<h2>Add New Employee</h2>
+<h2>Add New Empleado</h2>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
@@ -746,7 +746,7 @@ $result = $conn->query($sql);
     <label for="salary">Salary Per Month</label>
     <input type="text" class="form-control" id="salary" placeholder="Salary" name="salary">
   </div>
-  <button type="submit" class="btn btn-primary"  value="submit" name="insert_employee" >Add</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="insert_Empleado" >Add</button>
 <br>
 <?php
 $servername = "localhost";
@@ -760,7 +760,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST['insert_employee'])){
+if(isset($_POST['insert_Empleado'])){
   $first_name=$_POST['first_name'];
   $last_name=$_POST['last_name'];
   $gender=$_POST['gender'];
@@ -769,7 +769,7 @@ if(isset($_POST['insert_employee'])){
   $salary=$_POST['salary'];
   
      
-   $query = "INSERT INTO employee (`first_name`,`last_name`,`gender`,`contact_no`,`department`,`salary`) VALUES ('$first_name','$last_name','$gender','$contact_no','$department','$salary')";
+   $query = "INSERT INTO Empleado (`first_name`,`last_name`,`gender`,`contact_no`,`department`,`salary`) VALUES ('$first_name','$last_name','$gender','$contact_no','$department','$salary')";
    $query_run=mysqli_query($conn,$query);
    
 
@@ -787,10 +787,10 @@ if(isset($_POST['insert_employee'])){
 }
 
 ?>
-<!-- Show all employee -->
+<!-- Show all Empleado -->
 
     <br>
-    <button type="submit" class="btn btn-primary"  value="submit" name="show_employee" >Show All Employee Details</button>
+    <button type="submit" class="btn btn-primary"  value="submit" name="show_Empleado" >Show All Empleado Details</button>
 </form>
 <?php
 $servername = "localhost";
@@ -804,9 +804,9 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST['show_employee'])){
+if(isset($_POST['show_Empleado'])){
   
-$sql = "CALL show_all_employee_to_admin()";
+$sql = "CALL show_all_Empleado_to_admin()";
 $result = $conn->query($sql);   
    
 ?>
@@ -814,7 +814,7 @@ $result = $conn->query($sql);
 <br>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Employee ID</th>
+                <th>Empleado ID</th>
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Gender</th>
@@ -828,7 +828,7 @@ $result = $conn->query($sql);
             <tbody>
             <?php while ($r = $result->fetch_array()): ?>
                 <tr>
-                  <th scope="row"><?php echo $r['employee_id'] ?></th>
+                  <th scope="row"><?php echo $r['Empleado_id'] ?></th>
                     <td><?php echo $r['first_name'] ?></td>
                     <td><?php echo $r['last_name'] ?></td>
                     <td><?php echo $r['gender'] ?></td>
@@ -847,17 +847,17 @@ $result = $conn->query($sql);
   </div>
   </div>
   
-  <!-- Employee Attendence -->
-  <div id="employee_attendence" class="tabcontent">
+  <!-- Asistencia Empleado -->
+  <div id="Empleado_attendence" class="tabcontent">
   <div class="container">
-  <h2>Enter Employee ID to mark Attendence</h2>
+  <h2>Enter Empleado ID to mark Attendence</h2>
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
-    <label for="employee_id">Employee ID</label>
-    <input type="text" class="form-control" id="employee_id"  placeholder="Employee ID" name="employee_id">
+    <label for="Empleado_id">Empleado ID</label>
+    <input type="text" class="form-control" id="Empleado_id"  placeholder="Empleado ID" name="Empleado_id">
   </div>
-  <button type="submit" class="btn btn-primary"  value="submit" name="employee_attendence" >Add</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="Empleado_attendence" >Add</button>
   </form>
   <?php
 $servername = "localhost";
@@ -871,10 +871,10 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-if(isset($_POST['employee_attendence'])){
-  $employee_id=$_POST['employee_id'];
+if(isset($_POST['Empleado_attendence'])){
+  $Empleado_id=$_POST['Empleado_id'];
     
-   $query = "INSERT INTO employee_attendence (`employee_id`) VALUES ('$employee_id')";
+   $query = "INSERT INTO Empleado_attendence (`Empleado_id`) VALUES ('$Empleado_id')";
    $query_run=mysqli_query($conn,$query);
    
 
@@ -895,7 +895,7 @@ if(isset($_POST['employee_attendence'])){
 <br>
 <br>
 <br>
-<h2>Enter Date to show Employee Attendence</h2>
+<h2>Enter Date to show Asistencia Empleado</h2>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
@@ -919,7 +919,7 @@ if(isset($_POST['show_attendence'])){
   $date = strtotime($_POST['date']);
   $da= date('Y-m-d', $date );
 
-  $sql = "CALL show_attendence_of_employee('$da')";
+  $sql = "CALL show_attendence_of_Empleado('$da')";
   $result = $conn->query($sql);
     
       if($result){
@@ -928,7 +928,7 @@ if(isset($_POST['show_attendence'])){
   <br>   
   <table class="table table-striped table-light table-bordered">
             <thead class="thead-dark"><tr>
-                  <th>Employee ID</th>
+                  <th>Empleado ID</th>
                   <th>First Name</th>
                   <th>Last Name</th>
                   <th>Department</th>
@@ -939,7 +939,7 @@ if(isset($_POST['show_attendence'])){
               <tbody>
               <?php while ($r = $result->fetch_array()): ?>
                   <tr>
-                    <th scope="row"><?php echo $r['employee_id'] ?></th>
+                    <th scope="row"><?php echo $r['Empleado_id'] ?></th>
                       <td><?php echo $r['first_name'] ?></td>
                       <td><?php echo $r['last_name'] ?></td>
                       <td><?php echo $r['department'] ?></td>
@@ -963,7 +963,7 @@ if(isset($_POST['show_attendence'])){
           
 <div id="expenses" class="tabcontent">
 <div class="container">
-    <h2>Add Expenses</h2>
+    <h2>Agrega Gastos</h2>
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">

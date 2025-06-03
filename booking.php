@@ -70,7 +70,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 
                 <a href="logout.php" class="btn ml-3 nav__link">
                     <i class='bx bx-log-out nav__icon' ></i>
-                    <span class="nav__name">Log Out</span>
+                    <span class="nav__name">Cerrar Sesion</span>
                 </a>
                 
             </nav>
@@ -119,8 +119,8 @@ $result = $conn->query($sql);
 <br>  
 <table class="table table-striped table-dark table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Room No</th>
-                <th>Check-In-Date</th>
+                <th>Habitacion numero</th>
+                <th>Fecha de Check In</th>
                 <th>Check-out-Date</th>
                 <th>Total Days</th>
                 <th>Features</th>
@@ -347,7 +347,7 @@ $conn->close();
   </div>
   <div class="form-group">
     <label for="date">Fecha de Check In</label>
-    <input class="date-1" type="date" name="check-in-date"  placeholder="Fecha de Check In" >
+    <input class="date-1" type="date" name="Fecha de Check In"  placeholder="Fecha de Check In" >
   <!-- </div>
   <div class="form-group"> -->
     <label for="date">Fecha de Check Out</label>
@@ -355,7 +355,7 @@ $conn->close();
   </div>
     <!-- <div class="form-group">
   <span class="date">Fecha de Check In</span>
-    <input class="date-1" type="date" name="check-in-date" id="">
+    <input class="date-1" type="date" name="Fecha de Check In" id="">
     <span class="date">Fecha de Check Out</span>
     <input class="date-1" type="date" name="check-out-date" >
     </div> -->
@@ -375,7 +375,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
 if(isset($_POST['available_room'])){
-  $date = strtotime($_POST['check-in-date']);
+  $date = strtotime($_POST['Fecha de Check In']);
   $check_in= date('Y-m-d', $date );
   $date = strtotime($_POST['check-out-date']);
   $check_out= date('Y-m-d', $date ); 
@@ -395,7 +395,7 @@ $result = $conn->query($sql);
 <br>   
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Room No</th>
+                <th>Habitacion numero</th>
                 <th>Floor No</th>
                 <th>Room name</th>
                 <th>No of Single Bed</th>
@@ -433,7 +433,7 @@ $result = $conn->query($sql);
     
  }} ?>
       
-<!--  Book by room no -->
+<!--  Book by Habitacion numero -->
 
 <form action="booking.php" method="post">
   <!-- <span>Enter the room which you want to book: </span>
@@ -443,8 +443,8 @@ $result = $conn->query($sql);
     <label >Room Booking</label>
   </div>
   <div class="form-group">
-    <label for="room_no">Enter the Room No which you wnat to book:</label>
-    <input  type="text" name="room_no"  placeholder="Room No" >
+    <label for="room_no">Enter the Habitacion numero which you wnat to book:</label>
+    <input  type="text" name="room_no"  placeholder="Habitacion numero" >
   <div class="form-group">
     <label for="date">Fecha de Check In</label>
     <input class="date-1" type="date" name="check-in"  placeholder="Fecha de Check In" >
@@ -532,7 +532,7 @@ $status=$row["payment_status"];
 
 if($status==0){
   ?>
-  <h2> Booked Room</h2>
+  <h2> Habitaciones Reservadas</h2>
 <?php
 $sql = "SELECT amount FROM booking where customer_id=$customer_id AND payment_status=0";
 $result = $conn->query($sql);
@@ -547,8 +547,8 @@ $result = $conn->query($sql);
 <br>  
 <table class="table table-striped table-dark table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Room No</th>
-                <th>Check-In-Date</th>
+                <th>Habitacion numero</th>
+                <th>Fecha de Check In</th>
                 <th>Check-out-Date</th>
                 <th>Total Days</th>
                 <th>Features</th>
@@ -615,7 +615,7 @@ $payment_method=$_POST['payment_method'];
    $query_run=mysqli_query($conn,$query);
 
    if($query_run){
-      echo '<script> alert("Payment Done"); </script>';  
+      echo '<script> alert("Pago Realizado"); </script>';  
   }
   else{
       echo '<script> alert("Payment unsuccesful"); </script>';   
@@ -629,11 +629,11 @@ mysqli_close($conn);?>
 <hr>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <div class="form-group">
-    <label >Enter Room No and Check-out-date to cancel Booked Room.</label>
+    <label >Enter Habitacion numero and Check-out-date to cancel Habitaciones Reservadas.</label>
    </div>  
   <div class="form-group">
-    <label for="room_no">Room No:</label>
-    <input type="text" name="room_no"  placeholder="Room No" >
+    <label for="room_no">Habitacion numero:</label>
+    <input type="text" name="room_no"  placeholder="Habitacion numero" >
    </div>  
    <div class="form-group">
     <label for="check_out">Check-out-date:</label>

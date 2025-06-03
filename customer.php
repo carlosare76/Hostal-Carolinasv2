@@ -43,7 +43,7 @@
   <form action="customer.php"   method="POST">
   <div class="container check">
     <span class="date">Fecha de Check In</span>
-    <input class="date-1" type="date" name="check-in-date" id="">
+    <input class="date-1" type="date" name="Fecha de Check In" id="">
     <span class="date">Fecha de Check Out</span>
     <input class="date-1" type="date" name="check-out-date" id="">
     <button class="check-button" type="submit" name="available_room">Revisar Disponibilidad</button>
@@ -61,7 +61,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 } 
 if(isset($_POST['available_room'])){
-  $date = strtotime($_POST['check-in-date']);
+  $date = strtotime($_POST['Fecha de Check In']);
   $check_in= date('Y-m-d', $date );
   $date = strtotime($_POST['check-out-date']);
   $check_out= date('Y-m-d', $date ); 
@@ -72,7 +72,7 @@ $result = $conn->query($sql);
 <br>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Room No</th>
+                <th>Habitacion numero</th>
                 <th>Floor No</th>
                 <th>Room name</th>
                 <th>No of Single Bed</th>
