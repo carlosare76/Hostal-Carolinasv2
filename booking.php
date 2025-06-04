@@ -48,22 +48,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                     
                         <a href="#" class="nav__link tablink" onclick="openCity('personal_info', this, 'blue')">
                         <i class='bx bx-user nav__icon' ></i>
-                            <span class="nav__name">Personal Info</span>
+                            <span class="nav__name">Informacion Personal</span>
                         </a>
 
                         <a href="#" class="nav__link tablink" onclick="openCity('room_booking', this, 'blue')">
                         <i class="iconify" data-icon="uil:calender" data-inline="false"></i>
-                            <span class="nav__name">Book Room</span>
+                            <span class="nav__name">Numero Reserva</span>
                         </a>
 
                         <a href="#" class="nav__link tablink" onclick="openCity('payment', this, 'blue')">
                         <i class="iconify" data-icon="fluent:payment-16-regular" data-inline="false"></i>
-                            <span class="nav__name">Payment</span>
+                            <span class="nav__name">Pago</span>
                         </a>
                         
                         <a href="reset-password.php" class="btn nav__link">
                     <i class="iconify icon:carbon:password icon-inline:false"></i>
-                    <span class="nav__name">Reset Password</span>
+                    <span class="nav__name">Resetear Contraseña</span>
                         </a>
                     </div>
                 </div>
@@ -79,7 +79,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!--Inicio Page  -->
 <div id="Inicio" class="tabcontent">
     <div class="content">
-<h1 class="my-5">Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome to our site.</h1>
+<h1 class="my-5">Hola,  <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Bienvenido a nuestro sitio.</h1>
 </div>
 <?php
 $servername = "localhost";
@@ -121,10 +121,10 @@ $result = $conn->query($sql);
           <thead class="thead-dark"><tr>
                 <th>Habitacion numero</th>
                 <th>Fecha de Check In</th>
-                <th>Check-out-Date</th>
-                <th>Total Days</th>
-                <th>Features</th>
-                <th>Price Por Dia</th>
+                <th>Check-out-Fecha</th>
+                <th>Dias Totales</th>
+                <th>Caracteristicas</th>
+                <th>Precio por Dia</th>
             </tr></thead>
             
             <tbody>
@@ -148,7 +148,7 @@ $result = $conn->query($sql);
       }}} ?>
   </div>
   
-<!-- Personal Info Page-->
+<!-- Informacion Personal Page-->
 <div id="personal_info" class="tabcontent">
 <?php
 $servername = "localhost";
@@ -169,34 +169,34 @@ if($row==NULL){
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
-    <label for="first_name">First Name</label>
-    <input type="text" class="form-control" id="first_name"  placeholder="First Name" name="first_name">
+    <label for="first_name">Primer Nombre</label>
+    <input type="text" class="form-control" id="first_name"  placeholder="Primer Nombre" name="first_name">
   </div>
   <div class="form-group">
-    <label for="last_name">Last Name</label>
-    <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name">
+    <label for="last_name">Apellido</label>
+    <input type="text" class="form-control" id="last_name" placeholder="Apellido" name="last_name">
   </div>
   <div class="form-group">
-  <label for="gender">Gender:</label>
+  <label for="gender">Genero:</label>
         <select name="gender" id="Gender">
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-    <option value="other">Other</option>
+    <option value="male">Hombre</option>
+    <option value="female">Mujer</option>
+    <option value="other">Otro</option>
   </select>
   </div>
   <div class="form-group">
-    <label for="contact_no">Contact No</label>
-    <input type="text" class="form-control" id="contact_no" placeholder="Contact No" name="contact_no">
+    <label for="contact_no">Numero Contacto</label>
+    <input type="text" class="form-control" id="contact_no" placeholder="Numero Contacto" name="contact_no">
   </div>
   <div class="form-group">
-    <label for="email">Email address</label>
+    <label for="email">Direccion de Correo</label>
     <input type="email" class="form-control" id="email"  placeholder="Enter email" name="email">
   </div>
   <div class="form-group">
-  <label for="nationality">Nationality:</label>
+  <label for="nationality">Nacionalidad:</label>
         <select name="nationality" id="nationality">
-    <option value="indian">Indian</option>
-    <option value="non_indian">Non Indian</option>
+    <option value="indian">El Salvador</option>
+    <option value="non_indian">Non El Salvador</option>
   </select>
   <?php
 $servername = "localhost";
@@ -230,7 +230,7 @@ if(isset($_POST['insertdata'])){
 
 </div>
 
-  <button type="submit" class="btn btn-primary"  value="submit" name="insertdata" >Submit</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="insertdata" >Enviar</button>
 </form>
 </div>
     
@@ -243,42 +243,42 @@ if(isset($_POST['insertdata'])){
     <form action="booking.php" method="POST">
       <br>
     <div class="form-group">
-      <label for="first_name">First Name</label>
-      <input type="text" class="form-control" id="first_name"  placeholder="First Name" name="first_name">
+      <label for="first_name">Primer Nombre</label>
+      <input type="text" class="form-control" id="first_name"  placeholder="Primer Nombre" name="first_name">
     </div>
     <div class="form-group">
-      <label for="last_name">Last Name</label>
-      <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name">
+      <label for="last_name">Apellido</label>
+      <input type="text" class="form-control" id="last_name" placeholder="Apellido" name="last_name">
     </div>
     <div class="form-group">
-    <label for="gender">Gender:</label>
+    <label for="gender">Genero:</label>
           <select name="gender" id="Gender">
-      <option value="male">Male</option>
-      <option value="female">Female</option>
-      <option value="other">Other</option>
+      <option value="male">Hombre</option>
+      <option value="female">Mujer</option>
+      <option value="other">Otro</option>
     </select>
     </div>
     <div class="form-group">
-      <label for="contact_no">Contact No</label>
-      <input type="text" class="form-control" id="contact_no" placeholder="Contact No" name="contact_no">
+      <label for="contact_no">Numero Contacto</label>
+      <input type="text" class="form-control" id="contact_no" placeholder="Numero Contacto" name="contact_no">
     </div>
     <div class="form-group">
-      <label for="email">Email address</label>
+      <label for="email">Direccion de Correo</label>
       <input type="email" class="form-control" id="email"  placeholder="Enter email" name="email">
     </div>
     <div class="form-group">
-    <label for="nationality">Nationality:</label>
+    <label for="nationality">Nacionalidad:</label>
           <select name="nationality" id="nationality">
-      <option value="indian">Indian</option>
-      <option value="non_indian">Non Indian</option>
+      <option value="indian">El Salvador</option>
+      <option value="non_indian">Non El Salvador</option>
     </select>
   
     
   
   </div>
   
-    <button type="submit" class="btn btn-primary"  value="submit" name="updated" >Update</button>
-    <button type="submit" class="btn btn-secondary"  value="submit" name="cancel" >Cancel</button>
+    <button type="submit" class="btn btn-primary"  value="submit" name="updated" >Actualizar</button>
+    <button type="submit" class="btn btn-secondary"  value="submit" name="cancel" >Cancelar</button>
 
   </form>
   </div>
@@ -293,11 +293,11 @@ if(isset($_POST['insertdata'])){
     ?>
     <br>
     <br>
-    <span>If you want to update your information than click on the update button.</span>
+    <span>Si quieres actualizar tu informacion da click en Actualizar</span>
     <br>
     <br>
     <form action="booking.php" method="post">
-    <button type="submit" class="btn btn-primary"  value="submit" name="update" >Update</button>
+    <button type="submit" class="btn btn-primary"  value="submit" name="update" >Actualizar</button>
     </form>
   <?php
 }
@@ -338,7 +338,7 @@ $conn->close();
   ?>
   
   </div>    
-  <!--Room Booking -->
+  <!--Reserva Habitacion -->
   <div id="room_booking" class="tabcontent">
   <form action="booking.php"   method="POST">
     <br>
@@ -396,13 +396,13 @@ $result = $conn->query($sql);
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
                 <th>Habitacion numero</th>
-                <th>Floor No</th>
+                <th>Piso numero</th>
                 <th>Room name</th>
                 <th>No of Single Bed</th>
                 <th>No of Double Bed</th>
                 <th>No of Accomodate</th>
-                <th>Features</th>
-                <th>Price Por Dia</th>
+                <th>Caracteristicas</th>
+                <th>Precio por Dia</th>
                 
                 
             </tr></thead>
@@ -440,10 +440,10 @@ $result = $conn->query($sql);
   <input type="text" name="room_no" id=""> -->
 <hr>  
   <div class="form-group">
-    <label >Room Booking</label>
+    <label >Reserva Habitacion</label>
   </div>
   <div class="form-group">
-    <label for="room_no">Enter the Habitacion numero which you wnat to book:</label>
+    <label for="room_no">Ingresa Numero de Habitacion que quieres reservar</label>
     <input  type="text" name="room_no"  placeholder="Habitacion numero" >
   <div class="form-group">
     <label for="date">Fecha de Check In</label>
@@ -497,7 +497,7 @@ $conn->close();
 </div> 
   </div>
 
-  <!-- Payment Section -->
+  <!-- Pago Section -->
 
   <div id="payment" class="tabcontent">
 
@@ -549,10 +549,10 @@ $result = $conn->query($sql);
           <thead class="thead-dark"><tr>
                 <th>Habitacion numero</th>
                 <th>Fecha de Check In</th>
-                <th>Check-out-Date</th>
-                <th>Total Days</th>
-                <th>Features</th>
-                <th>Price Por Dia</th>
+                <th>Check-out-Fecha</th>
+                <th>Dias Totales</th>
+                <th>Caracteristicas</th>
+                <th>Precio por Dia</th>
             </tr></thead>
             
             <tbody>
@@ -571,7 +571,7 @@ $result = $conn->query($sql);
             </tbody>
         </table>
         <div>
-        <span>Total Amount: </span>
+        <span>Total Monto: </span>
         <?php echo $amount ?>
         </div>
         
@@ -579,17 +579,15 @@ $result = $conn->query($sql);
 
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 <div class="form-group">
-  <label for="payment_method">Payment Method:</label>
+  <label for="payment_method">Metodo de Pago</label>
         <select name="payment_method" id="payment_method">
-    <option value="NET_BANKING">NET BANKING</option>
-    <option value="CASH">CASH</option>
-    <option value="UPI">UPI</option>
-    <option value="CREID_CARD">CREDIT CARD</option>
-    <option value="DEBIT_CARD">DEBIT CARD</option>
+    <option value="NET_BANKING">Banco</option>
+    <option value="Efectivo">Efectivo</option>
+    <option value="CREID_CARD">Tarjeta Credito</option>
   </select>
   </div>
 
-  <button type="submit" class="btn btn-primary"  value="submit" name="payment_done" >Pay</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="payment_done" >Pagar</button>
 </form>
 <?php
 $servername = "localhost";
@@ -618,7 +616,7 @@ $payment_method=$_POST['payment_method'];
       echo '<script> alert("Pago Realizado"); </script>';  
   }
   else{
-      echo '<script> alert("Payment unsuccesful"); </script>';   
+      echo '<script> alert("Pago unsuccesful"); </script>';   
   }
 }
 ?>
@@ -629,7 +627,7 @@ mysqli_close($conn);?>
 <hr>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <div class="form-group">
-    <label >Enter Habitacion numero and Check-out-date to cancel Habitaciones Reservadas.</label>
+    <label >Ingresa numero de habitacion</label>
    </div>  
   <div class="form-group">
     <label for="room_no">Habitacion numero:</label>
@@ -639,7 +637,7 @@ mysqli_close($conn);?>
     <label for="check_out">Check-out-date:</label>
     <input type="text" name="check_out"  placeholder="Check-out-date" >
    </div>  
-  <button type="submit" class="btn btn-primary"  value="submit" name="delete" >Cancel Booking</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="delete" >Cancelar Reserva</button>
   </form>
   <?php
   $servername = "localhost";

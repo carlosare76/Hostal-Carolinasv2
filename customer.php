@@ -73,13 +73,13 @@ $result = $conn->query($sql);
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
                 <th>Habitacion numero</th>
-                <th>Floor No</th>
+                <th>Piso numero</th>
                 <th>Room name</th>
                 <th>No of Single Bed</th>
                 <th>No of Double Bed</th>
                 <th>No of Accomodate</th>
-                <th>Features</th>
-                <th>Price Por Dia</th>
+                <th>Caracteristicas</th>
+                <th>Precio por Dia</th>
             </tr></thead>
             
             <tbody>

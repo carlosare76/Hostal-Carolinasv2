@@ -225,8 +225,8 @@ $result = $conn->query($sql);
           <thead class="thead-dark"><tr>
                 <th>Habitacion numero</th>
                 <th>Fecha de Check In</th>
-                <th>Check-out-date</th>
-                <th>Customer ID</th>
+                <th>Fecha Check Out</th>
+                <th>ID Cliente</th>
                 
                 
             </tr></thead>
@@ -264,13 +264,13 @@ $result = $conn->query($sql);
 ?>
   
 <br>
-<h2>Payment Not Done</h2>  
+<h2>Pago no realizado</h2>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
                 <th>Habitacion numero</th>
                 <th>Fecha de Check In</th>
-                <th>Check-out-date</th>
-                <th>Customer ID</th>
+                <th>Fecha de Check Out</th>
+                <th>ID Cliente</th>
                 
                 
             </tr></thead>
@@ -292,17 +292,17 @@ $result = $conn->query($sql);
 
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
   <div class="form-group">
-    <label >Enter Habitacion numero and Check-out-date to cancel Habitaciones Reservadas.</label>
+    <label >Ingresa numero de habitacion y fecha de Check Out para cancelar la reserva.</label>
    </div>  
   <div class="form-group">
     <label for="room_no">Habitacion numero:</label>
     <input type="text" name="room_no"  placeholder="Habitacion numero" >
    </div>  
    <div class="form-group">
-    <label for="check_out">Check-out-date:</label>
+    <label for="check_out">Fecha de Check Out:</label>
     <input type="text" name="check_out"  placeholder="Check-out-date" >
    </div>  
-  <button type="submit" class="btn btn-primary"  value="submit" name="delete" >Cancel Booking</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="delete" >Cancelar Reserva</button>
   </form>
   <?php
   $servername = "localhost";
@@ -345,15 +345,15 @@ $conn->close();
     
   <!-- Agrega Habitacion -->
   <div id="add_new_room" class="tabcontent">
-    <h2>Create New Room</h2>
+    <h2>Crear Nueva Habitacion</h2>
     
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="form-group">
-  <label for="room_code">Room Name</label>
+  <label for="room_code">Nombre de Habitacion</label>
         <select name="room_code" id="room_code">
-    <option value="111">Delux</option>
-    <option value="222">Super Delux</option>
-    <option value="333">Luxury</option>
+    <option value="111">Sencilla</option>
+    <option value="222">Doble</option>
+    <option value="333">Cuadruple</option>
   </select>
 </div>
     <div class="form-group">
@@ -361,19 +361,19 @@ $conn->close();
     <input type="text" name="room_no" id="">            
     </div>
     <div class="form-group">
-    <label for="floor_no">Floor No</label>
+    <label for="floor_no">Piso numero</label>
     <input type="text" name="floor_no" id="">            
     </div>
     <div class="form-group">
-    <label for="features">Features</label>
+    <label for="features">Caracteristicas</label>
     <input type="text" name="features" id="">            
     </div>
     <div class="form-group">
-    <label for="amount">Amount</label>
+    <label for="amount">Monto</label>
     <input type="text" name="amount" id="">            
     </div>
     
-  <button type="submit" class="btn btn-primary"  value="submit" name="add_room" >Create</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="add_room" >Crear</button>
   </form>
     
   <?php
@@ -414,14 +414,14 @@ $conn->close();
   ?>
 
 <br>
-  <h2>Delete Room</h2>
+  <h2>Elimina Habitacion</h2>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
     <div class="form-group">
     <label for="room_no">Habitacion numero</label>
     <input type="text" name="room_no" id="">            
     </div>
 
-    <button type="submit" class="btn btn-primary"  value="submit" name="delete_room" >Delete</button>
+    <button type="submit" class="btn btn-primary"  value="submit" name="delete_room" >Eliminar</button>
   </form>
     
   <?php
@@ -483,13 +483,13 @@ $result = $conn->query($sql);
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
                 <th>Habitacion numero</th>
-                <th>Floor No</th>
-                <th>Room name</th>
-                <th>No of Single Bed</th>
-                <th>No of Double Bed</th>
-                <th>No of Accomodate</th>
-                <th>Features</th>
-                <th>Price Por Dia</th>
+                <th>Piso numero</th>
+                <th>Nombre habitacion</th>
+                <th>No de camas sencillas</th>
+                <th>No de camas dobles</th>
+                <th>No de personas</th>
+                <th>Caracteristicas</th>
+                <th>Precio por dia</th>
                 
                 
             </tr></thead>
@@ -517,29 +517,29 @@ $result = $conn->query($sql);
 <!-- Actualizar Informacion -->
 <div id="update_room_info" class="tabcontent">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-  <h2>Enter details to Actualizar Informacion</h2>
+  <h2>Ingresa los detalles para Actualizar Informacion</h2>
     <div class="form-group">
     <label for="room_no">Habitacion numero</label>
     <input type="text" name="room_no" id="">            
     </div>
     <div class="form-group">
-    <label for="room_name">Room Name</label>
+    <label for="room_name">Nombre de habitacion</label>
     <input type="text" name="room_name" id="">            
     </div>
     <div class="form-group">
-    <label for="floor_no">Floor No</label>
+    <label for="floor_no">Piso numero</label>
     <input type="text" name="floor_no" id="">            
     </div>
     <div class="form-group">
-    <label for="features">Features</label>
+    <label for="features">Caracteristicas</label>
     <input type="text" name="features" id="">            
     </div>
     <div class="form-group">
-    <label for="amount">Amount</label>
+    <label for="amount">Monto</label>
     <input type="text" name="amount" id="">            
     </div>
     
-  <button type="submit" class="btn btn-primary"  value="submit" name="update_room_info" >Submit</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="update_room_info" >Enviar</button>
   </form>
   <?php
 $servername = "localhost";
@@ -581,12 +581,12 @@ $conn->close();?>
 
   <div id="customer_info" class="tabcontent">
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">  
-  <h2>Enter customer ID to show customer deatils</h2>
+  <h2>Ingresa ID Cliente para ver detalles</h2>
     <div class="form-group">
-    <label for="customer_id">Customer ID</label>
+    <label for="customer_id">ID Cliente</label>
     <input type="text" name="customer_id" id="">            
     </div>
-    <button type="submit" class="btn btn-primary"  value="submit" name="show" >Show</button>
+    <button type="submit" class="btn btn-primary"  value="submit" name="show" >Mostrar</button>
   </form>
 
   <?php
@@ -613,14 +613,14 @@ if($result){
 <br>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Customer ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
+                <th>ID Cliente</th>
+                <th>Primer Nombre</th>
+                <th>Apellido</th>
+                <th>Genero</th>
                 <th>Email</th>
-                <th>Contact No</th>
-                <th>Nationality</th>
-                <th>Username</th>
+                <th>Numero Contacto</th>
+                <th>Nacionalidad</th>
+                <th>Nombre de Usuario</th>
                 
                 
             </tr></thead>
@@ -654,7 +654,7 @@ if($result){
 
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">  
         <br>
-        <button type="submit" class="btn btn-primary"  value="submit" name="show_all" >Show All Customer Details</button>
+        <button type="submit" class="btn btn-primary"  value="submit" name="show_all" >Mostrar Detalles Cliente</button>
         </form>
 
         <?php
@@ -679,14 +679,14 @@ $result = $conn->query($sql);
 <br>  
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
-                <th>Customer ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
+                <th>ID Cliente</th>
+                <th>Primer Nombre</th>
+                <th>Apellido</th>
+                <th>Genero</th>
                 <th>Email</th>
-                <th>Contact No</th>
-                <th>Nationality</th>
-                <th>Username</th>
+                <th>Numero Contacto</th>
+                <th>Nacionalidad</th>
+                <th>Nombre de Usuario</th>
                 
                 
             </tr></thead>
@@ -715,38 +715,38 @@ $result = $conn->query($sql);
 
 <div id="Empleado" class="tabcontent">
 <div class="container">
-<h2>Add New Empleado</h2>
+<h2>Agrega Nuevo Empleado</h2>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
-    <label for="first_name">First Name</label>
-    <input type="text" class="form-control" id="first_name"  placeholder="First Name" name="first_name">
+    <label for="first_name">Primer Nombre</label>
+    <input type="text" class="form-control" id="first_name"  placeholder="Primer Nombre" name="first_name">
   </div>
   <div class="form-group">
-    <label for="last_name">Last Name</label>
-    <input type="text" class="form-control" id="last_name" placeholder="Last Name" name="last_name">
+    <label for="last_name">Apellido</label>
+    <input type="text" class="form-control" id="last_name" placeholder="Apellido" name="last_name">
   </div>
   <div class="form-group">
-  <label for="gender">Gender:</label>
+  <label for="gender">Genero:</label>
         <select name="gender" id="Gender">
-    <option value="male">Male</option>
-    <option value="female">Female</option>
-    <option value="other">Other</option>
+    <option value="male">Hombre</option>
+    <option value="female">Mujer</option>
+    <option value="other">Otro</option>
   </select>
   </div>
   <div class="form-group">
-    <label for="contact_no">Contact No</label>
-    <input type="text" class="form-control" id="contact_no" placeholder="Contact No" name="contact_no">
+    <label for="contact_no">Numero Contacto</label>
+    <input type="text" class="form-control" id="contact_no" placeholder="Numero Contacto" name="contact_no">
   </div>
   <div class="form-group">
-    <label for="department">Department</label>
-    <input type="text" class="form-control" id="department" placeholder="Department" name="department">
+    <label for="department">Area</label>
+    <input type="text" class="form-control" id="department" placeholder="Area" name="department">
   </div>
   <div class="form-group">
-    <label for="salary">Salary Per Month</label>
+    <label for="salary">Salario Mensual</label>
     <input type="text" class="form-control" id="salary" placeholder="Salary" name="salary">
   </div>
-  <button type="submit" class="btn btn-primary"  value="submit" name="insert_Empleado" >Add</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="insert_Empleado" >Agregar</button>
 <br>
 <?php
 $servername = "localhost";
@@ -787,10 +787,10 @@ if(isset($_POST['insert_Empleado'])){
 }
 
 ?>
-<!-- Show all Empleado -->
+<!-- Mostrar all Empleado -->
 
     <br>
-    <button type="submit" class="btn btn-primary"  value="submit" name="show_Empleado" >Show All Empleado Details</button>
+    <button type="submit" class="btn btn-primary"  value="submit" name="show_Empleado" >Mostrar Detalles Empleado</button>
 </form>
 <?php
 $servername = "localhost";
@@ -815,12 +815,12 @@ $result = $conn->query($sql);
 <table class="table table-striped table-light table-bordered">
           <thead class="thead-dark"><tr>
                 <th>Empleado ID</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Gender</th>
-                <th>Contact No</th>
-                <th>Department</th>
-                <th>Salary Per Month</th>
+                <th>Primer Nombre</th>
+                <th>Apellido</th>
+                <th>Genero</th>
+                <th>Numero Contacto</th>
+                <th>Area</th>
+                <th>Salario Mensual</th>
                 
                 
             </tr></thead>
@@ -850,14 +850,14 @@ $result = $conn->query($sql);
   <!-- Asistencia Empleado -->
   <div id="Empleado_attendence" class="tabcontent">
   <div class="container">
-  <h2>Enter Empleado ID to mark Attendence</h2>
+  <h2>Ingresa ID Empleado para marcar asistencia</h2>
   <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
     <label for="Empleado_id">Empleado ID</label>
     <input type="text" class="form-control" id="Empleado_id"  placeholder="Empleado ID" name="Empleado_id">
   </div>
-  <button type="submit" class="btn btn-primary"  value="submit" name="Empleado_attendence" >Add</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="Empleado_attendence" >Agregar</button>
   </form>
   <?php
 $servername = "localhost";
@@ -895,14 +895,14 @@ if(isset($_POST['Empleado_attendence'])){
 <br>
 <br>
 <br>
-<h2>Enter Date to show Asistencia Empleado</h2>
+<h2>Ingresa Fecha para ver Asistencia Empleado</h2>
 <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
-    <label for="date">Date</label>
-    <input type="text" class="form-control" id="date"  placeholder="Date" name="date">
+    <label for="date">Fecha</label>
+    <input type="text" class="form-control" id="date"  placeholder="Fecha" name="date">
   </div>
-  <button type="submit" class="btn btn-primary"  value="submit" name="show_attendence" >Show</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="show_attendence" >Mostrar</button>
   </form>
   <?php
 $servername = "localhost";
@@ -929,9 +929,9 @@ if(isset($_POST['show_attendence'])){
   <table class="table table-striped table-light table-bordered">
             <thead class="thead-dark"><tr>
                   <th>Empleado ID</th>
-                  <th>First Name</th>
-                  <th>Last Name</th>
-                  <th>Department</th>
+                  <th>Primer Nombre</th>
+                  <th>Apellido</th>
+                  <th>Area</th>
                   
                   
               </tr></thead>
@@ -967,14 +967,14 @@ if(isset($_POST['show_attendence'])){
     <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
     <br>
   <div class="form-group">
-    <label for="expense_name">Name</label>
-    <input type="text" class="form-control" id="expense_name"  placeholder="Expense Name" name="expense_name">
+    <label for="expense_name">Nombre</label>
+    <input type="text" class="form-control" id="expense_name"  placeholder="Expense Nombre" name="expense_name">
   </div>
   <div class="form-group">
-    <label for="amount">Amount</label>
-    <input type="text" class="form-control" id="amount"  placeholder="Amount" name="amount">
+    <label for="amount">Monto</label>
+    <input type="text" class="form-control" id="amount"  placeholder="Monto" name="amount">
   </div>
-  <button type="submit" class="btn btn-primary"  value="submit" name="add_expenses" >Add</button>
+  <button type="submit" class="btn btn-primary"  value="submit" name="add_expenses" >Agregar</button>
   </form>
   <?php
 $servername = "localhost";
